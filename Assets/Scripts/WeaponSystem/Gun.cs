@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour
     private bool _isReloading;
     private bool _isShooting;
 
+    private MonoFactory<ProjectileBase> _projectileFactory;
+
     public int CurrentAmmoInGun => _currentAmmoInGun;
 
     public event Action Shooted;
@@ -21,6 +23,7 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         _currentAmmoInGun = _gunSettings.MaxAmmoInGun;
+        _projectileFactory = new MonoFactory<ProjectileBase>(_gunSettings.ProjectilePrefab);
     }
 
     public void SetShoot(bool state)
@@ -50,8 +53,7 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        ProjectileBase projectile = Instantiate(_gunSettings.ProjectilePrefab, _projectileOrigin.position, Quaternion.Euler(_projectileOrigin.eulerAngles));
-        projectile.Initialize(_gunSettings.Damage);
+        _projectileFactory.CreateWithoutParent(_projectileOrigin.position, Quaternion.Euler(_projectileOrigin.eulerAngles)).Initialize(_gunSettings.Damage);
 
         _currentAmmoInGun--;
         Shooted?.Invoke();

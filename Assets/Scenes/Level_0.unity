@@ -2782,11 +2782,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnChanceObject:
-  - _enemyPrefab: {fileID: 5310851790257670094, guid: ee70be836f4e73d44a55892af580f2c9, type: 3}
+  - _currentEnemyPrefab: {fileID: 8943962453586578393, guid: ee70be836f4e73d44a55892af580f2c9, type: 3}
     _spawnChance: 5
-  - _enemyPrefab: {fileID: 1659148704368066937, guid: 70f2b82a2dc960d409a2acb104bd5fc0, type: 3}
+  - _currentEnemyPrefab: {fileID: 6518436624307371683, guid: 70f2b82a2dc960d409a2acb104bd5fc0, type: 3}
     _spawnChance: 2
-  - _enemyPrefab: {fileID: 9008797167576686002, guid: ee62fbf5d9080dc4f97cd7b7a6af2d36, type: 3}
+  - _currentEnemyPrefab: {fileID: -4292393643648195824, guid: ee62fbf5d9080dc4f97cd7b7a6af2d36, type: 3}
     _spawnChance: 1
   _spawnPoints:
   - {fileID: 1441950649}
